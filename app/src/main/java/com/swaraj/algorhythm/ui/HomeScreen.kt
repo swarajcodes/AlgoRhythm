@@ -20,12 +20,14 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -51,12 +53,12 @@ import androidx.navigation.NavController
 import com.swaraj.algorhythm.R
 import com.swaraj.algorhythm.viewmodel.AlgorithmViewModel
 
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController: NavController) {
-    Scaffold(
+    androidx.compose.material3.Scaffold(
         topBar = {
-            TopAppBar(
+            androidx.compose.material3.TopAppBar(
                 title = {
                     Text(
                         "Algorithm Visualiser",
@@ -67,9 +69,13 @@ fun HomeScreen(navController: NavController) {
                         modifier = Modifier.padding(start = 40.dp)
                     )
                 },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = colorResource(id = R.color.bgcolor)
+                ),
                 modifier = Modifier.fillMaxWidth()
             )
         },
+        containerColor = Color.White
     ) { innerPadding ->
         Column(
             modifier = Modifier
@@ -91,7 +97,6 @@ fun HomeScreen(navController: NavController) {
     }
 }
 
-@SuppressLint("DiscouragedApi")
 @Composable
 fun SortOption(
     navController: NavController,
@@ -105,13 +110,14 @@ fun SortOption(
         context.resources.getIdentifier(image, "drawable", context.packageName)
     }
 
-    Surface(
+    androidx.compose.material3.Surface(
         modifier = Modifier
             .fillMaxWidth()
             .height(200.dp)  // Increased overall height
             .clickable { navController.navigate(screenname) }
             .padding(16.dp),
         shape = RoundedCornerShape(16.dp),
+        shadowElevation = 8.dp
     ) {
         Row(
             modifier = Modifier

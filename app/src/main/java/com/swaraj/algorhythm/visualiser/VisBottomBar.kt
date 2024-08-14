@@ -4,9 +4,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.BottomAppBar
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
+import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
@@ -33,9 +33,9 @@ fun VisBottomBar(
     nextClick:()->Unit,
     isPlaying:Boolean = false
 ){
-    BottomAppBar(
+    androidx.compose.material3.BottomAppBar(
         modifier = modifier,
-        //containerColor = Color.Transparent
+        containerColor = Color.Transparent
     ){
         Row(
             modifier = Modifier.fillMaxWidth(),

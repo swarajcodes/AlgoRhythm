@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.swaraj.algorhythm.Algorithm.SortingAlgorithm
 import com.swaraj.algorhythm.data.AlgorithmEvents
-import com.swaraj.algorhythm.data.AlgorithmEvents.SlowDown
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.time.delay
 
@@ -23,7 +22,7 @@ class AlgorithmViewModel(
 
     val isPlaying = mutableStateOf(false)
     val onSortingFinished = mutableStateOf(false)
-    private var delay = 150L
+    private var delayy = 150L
     private var pause = false
     private var next = 1
     private var previous = 0
@@ -74,7 +73,7 @@ class AlgorithmViewModel(
         pause = false
         for (i in sortingState until sortedArrayLevels.size) {
             if (!pause) {
-                //delay(delay)
+                kotlinx.coroutines.delay(delayy)
                 arr.value = sortedArrayLevels[i].toIntArray()
             } else {
                 sortingState = i
@@ -107,14 +106,14 @@ class AlgorithmViewModel(
     }
 
     private fun speedUp() {
-        if (delay >=30L) {
-            delay -=10
+        if (delayy >=30L) {
+            delayy -=10
         }
     }
 
     private fun slowDown() {
 
-        delay+=20
+        delayy+=20
 
     }
 }
