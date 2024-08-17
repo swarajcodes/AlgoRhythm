@@ -61,38 +61,38 @@ fun HomeScreen(navController: NavController) {
             androidx.compose.material3.TopAppBar(
                 title = {
                     Text(
-                        "Algorithm Visualiser",
+                        "AlgoRhythm",
                         color = Color.Black,
                         fontSize = 28.sp,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(start = 40.dp)
+                        //modifier = Modifier.padding(start = 107.dp)
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = colorResource(id = R.color.bgcolor)
+                    containerColor = colorResource(id = R.color.purple_200)
                 ),
                 modifier = Modifier.fillMaxWidth()
             )
         },
-        containerColor = Color.White
+        containerColor = colorResource(id = R.color.white)
     ) { innerPadding ->
         Column(
             modifier = Modifier
                 .verticalScroll(rememberScrollState())
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(top = 8.dp, bottom = 24.dp)
-                .background(Color.White),
+                .padding(top = 8.dp, bottom = 24.dp),
+                //.background(colorResource(id = R.color.teal)),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(modifier = Modifier.height(16.dp))
-            SortOption(navController = navController, algorithmName = "Bubble", screenname = "bubbleSort", complexity = "n\u00B2",image = "bubble")
-            SortOption(navController = navController, algorithmName = "Insertion", screenname = "insertionSort", complexity = "n\u00B2", image = "insertion")
-            SortOption(navController = navController, algorithmName = "Merge", screenname = "mergeSort", complexity = "nlogn", image = "merge")
-            SortOption(navController = navController, algorithmName = "Quick", screenname = "quickSort", complexity = "nlogn", image = "quick")
-            SortOption(navController = navController, algorithmName = "Selection", screenname = "selectionSort", complexity = "n\u00B2", image = "selection")
+            SortOption(navController = navController, algorithmName = "Bubble Sort", screenname = "bubbleSort", complexity = "n\u00B2",image = "bubble")
+            SortOption(navController = navController, algorithmName = "Insertion Sort", screenname = "insertionSort", complexity = "n\u00B2", image = "insertion")
+            SortOption(navController = navController, algorithmName = "Merge Sort", screenname = "mergeSort", complexity = "nlogn", image = "merge")
+            SortOption(navController = navController, algorithmName = "Quick Sort", screenname = "quickSort", complexity = "nlogn", image = "quick")
+            SortOption(navController = navController, algorithmName = "Selection Sort", screenname = "selectionSort", complexity = "n\u00B2", image = "selection")
         }
     }
 }
@@ -113,7 +113,7 @@ fun SortOption(
     androidx.compose.material3.Surface(
         modifier = Modifier
             .fillMaxWidth()
-            .height(200.dp)  // Increased overall height
+            .height(160.dp)
             .clickable { navController.navigate(screenname) }
             .padding(16.dp),
         shape = RoundedCornerShape(16.dp),
@@ -147,11 +147,11 @@ fun SortOption(
                     lineHeight = 38.sp
                 )
                 Spacer(modifier = Modifier.height(12.dp))
-                Text(
-                    text = "O($complexity)",
-                    fontSize = 28.sp,  // Increased font size
-                    lineHeight = 34.sp
-                )
+//                Text(
+//                    text = "O($complexity)",
+//                    fontSize = 28.sp,  // Increased font size
+//                    lineHeight = 34.sp
+//                )
             }
         }
     }

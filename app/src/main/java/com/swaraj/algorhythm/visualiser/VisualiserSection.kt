@@ -43,7 +43,7 @@ fun VisualiserSection(
                     modifier = Modifier
                         .height(if(it.dp>maxHeight) maxHeight else (it.dp - 25.dp))
                         .width(itemWidth)
-                        .background(color = colorResource(id = R.color.bgcolor))
+                        .background(color = colorResource(id = R.color.purple_500))
                 )
             }
         }

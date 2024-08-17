@@ -20,7 +20,7 @@ fun AppNavHost(navController: NavHostController) {
         composable("Home") {
             HomeScreen(navController)
         }
-        composable("Bubble Sort") {
+        composable("BubbleSort") {
             val viewModel: AlgorithmViewModel = viewModel(
                 factory = AlgorithmViewModelProvider(BubbleSort())
             )
