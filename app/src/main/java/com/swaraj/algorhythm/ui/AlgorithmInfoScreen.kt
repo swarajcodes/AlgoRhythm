@@ -60,7 +60,7 @@ fun AlgorithmInfoScreen(navHostController: NavHostController, viewModel: Algorit
             modifier = Modifier
                 .fillMaxSize()
                 .padding(ContentPadding)
-                .padding(top = 18.dp, start = 18.dp, bottom = 18.dp, end = 24.dp)
+                .padding(top = 18.dp, start = 18.dp, bottom = 0.dp, end = 24.dp)
                 .verticalScroll(rememberScrollState())
 
         ) {
@@ -70,7 +70,7 @@ fun AlgorithmInfoScreen(navHostController: NavHostController, viewModel: Algorit
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center)
-            Spacer(modifier = Modifier.height(5.dp))
+            //Spacer(modifier = Modifier.height(5.dp))
         }
         if (showBottomSheet) {
             ModalBottomSheet(
