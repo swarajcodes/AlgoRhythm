@@ -129,6 +129,7 @@ fun SortOption(
                     fontWeight = FontWeight.Bold,
                     lineHeight = 38.sp
                 )
+
                 Spacer(modifier = Modifier.height(12.dp))
 //                Text(
 //                    text = "O($complexity)",

@@ -35,6 +35,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.swaraj.algorhythm.data.AlgorithmEvents
 import com.swaraj.algorhythm.visualiser.Visualiser
 import com.swaraj.algorhythm.viewmodel.AlgorithmViewModel
 import kotlinx.coroutines.launch
@@ -54,7 +55,7 @@ fun AlgorithmInfoScreen(navHostController: NavHostController, viewModel: Algorit
                     showBottomSheet = true
                 }
             )
-        }
+        },
     ){ ContentPadding ->
         Column(
             modifier = Modifier

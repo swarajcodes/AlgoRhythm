@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
@@ -24,7 +26,8 @@ fun BottomWindow(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .height(300.dp) // adjust the height as needed
+            .height(300.dp)
+            .verticalScroll(rememberScrollState())
     ) {
         TabRow(
             selectedTabIndex = selectedTabIndex.value,

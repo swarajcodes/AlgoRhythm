@@ -48,4 +48,4 @@ class QuickSort : SortingAlgorithm {
         onSwap(arr)
         return i + 1
     }
-}6
+}
